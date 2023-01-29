@@ -1,0 +1,22 @@
+vpc_name: "vprofile-vpc"
+
+# VPC RANGE
+vpcCidar: '172.20.0.0/16'
+
+# SUbnet range
+PubSub1Cidar: 172.20.1.0/24
+PubSub2Cidar: 172.20.1.0/24
+PubSub3Cidar: 172.20.1.0/24
+PrivSub4Cidar: 172.20.1.0/24
+PrivSub5Cidar: 172.20.1.0/24
+PrivSub6Cidar: 172.20.1.0/24
+
+#region:
+region : "us-east-1"
+
+#zone
+zone1: us-east-1a
+zone2: us-east-1b
+zone3: us-east-1c
+
+state: present
