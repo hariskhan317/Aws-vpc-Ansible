@@ -96,3 +96,23 @@
         resource_tags:
           Name: PrivSub3Cidr
       register: PrivSub3_out
+#  Internet gateway
+    - name: Attach Internet Gateway to VPC
+      ec2_vpc_igw_association:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{ region }}"
+        state: "{{state}}"
+      register: igw_out
+#  routes table
+    - name: Set up public subnet route table
+      ec2_vpc_route_table:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{ region }}"
+        subnets:
+          - "{{ PubSub1_out.subnet.id }}"
+          - "{{ PubSub2_out.subnet.id }}"
+          - "{{ PubSub3_out.subnet.id }}"
+        routes:
+          - dest: 0.0.0.0/0
+            gateway_id: "{{ igw_out.gateway_id }}"
+      register: pubRt_out
