@@ -22,3 +22,65 @@
 
     - debug:
         var: vpcout
+
+      #Public subnet
+    - name: Create subnet for PubSub1Cidr
+      ec2_vpc_subnet:
+        state: "{{state}}"
+        vpc_id: "{{vpcout.vpc.id}}"
+        cidr: "{{PubSub1Cidr}}"
+        region: "{{region}}"
+        az: "{{zone1}}"
+        map_public: yes
+      register: PubSub1_out
+
+    - name: Create subnet for PubSub2Cidr
+      ec2_vpc_subnet:
+        state: "{{state}}"
+        vpc_id: "{{vpcout.vpc.id}}"
+        cidr: "{{PubSub2Cidr}}"
+        region: "{{region}}"
+        az: "{{zone2}}"
+        map_public: yes
+      register: PubSub2_out
+
+    - name: Create subnet for PubSub3Cidr
+      ec2_vpc_subnet:
+        state: "{{state}}"
+        vpc_id: "{{vpcout.vpc.id}}"
+        cidr: "{{PubSub3Cidr}}"
+        region: "{{region}}"
+        az: "{{zone3}}"
+        map_public: yes
+      register: PubSub3_out
+
+    #Private subnet
+    - name: Create subnet for PubSub1Cidr
+      ec2_vpc_subnet:
+        state: "{{state}}"
+        vpc_id: "{{vpcout.vpc.id}}"
+        cidr: "{{PrivSub4Cidr}}"
+        region: "{{region}}"
+        az: "{{zone1}}"
+        map_public: yes
+      register: PrivSub1_out
+
+    - name: Create subnet for PubSub2Cidr
+      ec2_vpc_subnet:
+        state: "{{state}}"
+        vpc_id: "{{vpcout.vpc.id}}"
+        cidr: "{{PrivSub5Cidr}}"
+        region: "{{region}}"
+        az: "{{zone2}}"
+        map_public: yes
+      register: PrivSub2_out
+
+    - name: Create subnet for PubSub3Cidr
+      ec2_vpc_subnet:
+        state: "{{state}}"
+        vpc_id: "{{vpcout.vpc.id}}"
+        cidr: "{{PrivSub6Cidr}}"
+        region: "{{region}}"
+        az: "{{zone3}}"
+        map_public: yes
+      register: PrivSub3_out
