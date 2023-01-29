@@ -124,7 +124,7 @@
         wait: true
         region: "{{ region }}"
         if_exist_do_not_create: true
-      register: nat_gateway_out
+      register: NATGW_out
 #     Route for nat
     - name: Set up Private subnet route table
       ec2_vpc_route_table:
@@ -136,5 +136,5 @@
           - "{{ PrivSub3_out.subnet.id }}"
         routes:
           - dest: 0.0.0.0/0
-            gateway_id: "{{ nat_gateway_out.gateway_id }}"
+            gateway_id: "{{ NATGW_out.gateway_id }}"
       register: privRt_out
