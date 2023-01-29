@@ -4,12 +4,12 @@ vpc_name: "vprofile-vpc"
 vpcCidar: '172.20.0.0/16'
 
 # SUbnet range
-PubSub1Cidar: 172.20.1.0/24
-PubSub2Cidar: 172.20.1.0/24
-PubSub3Cidar: 172.20.1.0/24
-PrivSub4Cidar: 172.20.1.0/24
-PrivSub5Cidar: 172.20.1.0/24
-PrivSub6Cidar: 172.20.1.0/24
+PubSub1Cidr: 172.20.1.0/24
+PubSub2Cidr: 172.20.1.0/24
+PubSub3Cidr: 172.20.1.0/24
+PrivSub4Cidr: 172.20.1.0/24
+PrivSub5Cidr: 172.20.1.0/24
+PrivSub6Cidr: 172.20.1.0/24
 
 #region:
 region : "us-east-1"
