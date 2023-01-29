@@ -32,6 +32,8 @@
         region: "{{region}}"
         az: "{{zone1}}"
         map_public: yes
+        resource_tags:
+          Name: PubSub1Cidr
       register: PubSub1_out
 
     - name: Create subnet for PubSub2Cidr
@@ -42,6 +44,8 @@
         region: "{{region}}"
         az: "{{zone2}}"
         map_public: yes
+        resource_tags:
+          Name: PubSub2Cidr
       register: PubSub2_out
 
     - name: Create subnet for PubSub3Cidr
@@ -52,10 +56,12 @@
         region: "{{region}}"
         az: "{{zone3}}"
         map_public: yes
+        resource_tags:
+          Name: PubSub3Cidr
       register: PubSub3_out
 
     #Private subnet
-    - name: Create subnet for PubSub1Cidr
+    - name: Create subnet for PrivSub1Cidr
       ec2_vpc_subnet:
         state: "{{state}}"
         vpc_id: "{{vpcout.vpc.id}}"
@@ -63,9 +69,11 @@
         region: "{{region}}"
         az: "{{zone1}}"
         map_public: yes
+        resource_tags:
+          Name: PrivSub1Cidr
       register: PrivSub1_out
 
-    - name: Create subnet for PubSub2Cidr
+    - name: Create subnet for PrivSub2Cidr
       ec2_vpc_subnet:
         state: "{{state}}"
         vpc_id: "{{vpcout.vpc.id}}"
@@ -73,9 +81,11 @@
         region: "{{region}}"
         az: "{{zone2}}"
         map_public: yes
+        resource_tags:
+          Name: PrivSub2Cidr
       register: PrivSub2_out
 
-    - name: Create subnet for PubSub3Cidr
+    - name: Create subnet for PrivSub3Cidr
       ec2_vpc_subnet:
         state: "{{state}}"
         vpc_id: "{{vpcout.vpc.id}}"
@@ -83,4 +93,6 @@
         region: "{{region}}"
         az: "{{zone3}}"
         map_public: yes
+        resource_tags:
+          Name: PrivSub3Cidr
       register: PrivSub3_out
