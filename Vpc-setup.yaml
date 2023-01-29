@@ -98,7 +98,7 @@
       register: PrivSub3_out
 #  Internet gateway
     - name: Attach Internet Gateway to VPC
-      ec2_vpc_igw_association:
+      ec2_vpc_igw:
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{ region }}"
         state: "{{state}}"
