@@ -23,11 +23,10 @@
       when: my_var.changed
 
     - name: security group
-      ec2_security_group:
+      ec2_group:
         name: Bastion Host sh
         vpc_id: "{{vpcid}}"
         region: "{{region}}"
-        state: "{{state}}"
         rules:
           - proto: tcp
             from_port: 22
