@@ -35,8 +35,7 @@
       register: BastionSG_out
 
     - name: Create Bastion Host
-      ec2_instance:
-        name: "public-compute-instance"
+      ec2:
         key_name: "vprofile-key"
         region: "{{region}}"
         instance_type: t2.micro
