@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   connection: local
-  gather_facts: False
+  gather_facts: no
   tasks:
     - name: Importing Varibles OUTPUT
       include_vars: vars/output_vars
@@ -17,7 +17,7 @@
 
     - name: storing
       copy:
-        content: "{my_var.key.my_keypair}"
+        content: "{{my_var.key.my_keypair}}"
         dest: "./sample-key.pem"
         mode: 0600
       when: my_var.changed
