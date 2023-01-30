@@ -27,6 +27,7 @@
         name: Bastion Host sh
         vpc_id: "{{vpcid}}"
         region: "{{region}}"
+        state: "{{state}}"
         rules:
           - proto: tcp
             from_port: 22
