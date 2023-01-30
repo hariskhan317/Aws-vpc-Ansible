@@ -42,7 +42,7 @@
         wait: yes
         wait_timeout: 300
         vpc_subnet_id: "{{pubsub1id}}"
-        image_id: "{{bastion_ami}}"
+        image: "{{bastion_ami}}"
         instance_tags:
           Name: "Bastion_host"
           project: vprofile
